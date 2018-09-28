@@ -9,11 +9,11 @@
 
     <EditText
         android:id="@+id/num1"
-        android:layout_width="@android:dimen/thumbnail_width"
-        android:layout_height="40dp"
+        android:layout_width="288dp"
+        android:layout_height="43dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="30dp"
         android:background="@android:color/background_light"
         android:hint=">Número 1"
         android:inputType="number"
@@ -21,12 +21,12 @@
 
     <EditText
         android:id="@+id/num2"
-        android:layout_width="@android:dimen/thumbnail_width"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/num1"
-        android:layout_alignStart="@+id/num1"
+        android:layout_width="287dp"
+        android:layout_height="42dp"
         android:layout_below="@+id/num1"
-        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/num1"
+        android:layout_alignLeft="@+id/num1"
+        android:layout_marginTop="22dp"
         android:background="@android:color/background_light"
         android:hint=">Número 2"
         android:inputType="number"
@@ -42,76 +42,79 @@
 
     <Button
         android:id="@+id/btnSuma"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/num2"
         android:layout_marginTop="33dp"
-        android:layout_toLeftOf="@+id/num2"
+        android:layout_marginEnd="-38dp"
+        android:layout_marginRight="-38dp"
         android:layout_toStartOf="@+id/num2"
-        android:text="+"
-        android:textSize="24sp"
+        android:layout_toLeftOf="@+id/num2"
         android:onClick="calculate"
-        />
+        android:text="+"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnResta"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btnSuma"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/btnSuma"
         android:layout_toRightOf="@+id/btnSuma"
-        android:text="-"
-        android:textSize="24sp"
         android:onClick="calculate"
-        />
+        android:text="-"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnMulti"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnResta"
         android:layout_alignBottom="@+id/btnResta"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="1dp"
         android:layout_toEndOf="@+id/btnResta"
         android:layout_toRightOf="@+id/btnResta"
-        android:text="*"
-        android:textSize="24sp"
         android:onClick="calculate"
-        />
+        android:text="*"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnDivi"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnMulti"
         android:layout_alignBottom="@+id/btnMulti"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="0dp"
         android:layout_toEndOf="@+id/btnMulti"
         android:layout_toRightOf="@+id/btnMulti"
-        android:text="%"
-        android:textSize="24sp"
         android:onClick="calculate"
-        />
+        android:text="%"
+        android:textSize="24sp" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="@android:dimen/notification_large_icon_height"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
         android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="23dp"
         app:srcCompat="@drawable/calc" />
+
     <TextView
         android:id="@+id/result"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/btnResta"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="79dp"
         android:background="@android:color/background_light"
         android:text="Resultado"
         android:textSize="24sp" />

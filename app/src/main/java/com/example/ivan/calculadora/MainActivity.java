@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,39 +27,64 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(View view) {
+        try {
+            val1 = Integer.parseInt(num1.getText().toString());
+            val2 = Integer.parseInt(num2.getText().toString());
 
-        val1 = Integer.parseInt(num1.getText().toString());
-        val2 = Integer.parseInt(num2.getText().toString());
+            switch (view.getId()) {
+                case R.id.btnSuma: sumar();
+                    break;
+                case R.id.btnResta: restar();
+                    break;
+                case R.id.btnMulti: multiplicar();
+                    break;
+                case R.id.btnDivi: dividir();
+                    break;
+            }
+        } catch(Exception e) {
+            Toast.makeText(this, "Eror inesperado", Toast.LENGTH_LONG ).show();
+        }
 
-        switch (view.getId()) {
-            case R.id.btnSuma: sumar();
-                break;
-            case R.id.btnResta: restar();
-                break;
-            case R.id.btnMulti: multiplicar();
-                break;
-            case R.id.btnDivi: dividir();
-                break;
+    }
+
+    private void sumar(){
+        try {
+            int suma = val1 + val2;
+            result.setText("R: " + suma);
+        } catch(Exception e) {
+            Toast.makeText(this, "Eror inesperado", Toast.LENGTH_LONG ).show();
         }
     }
 
-    private void sumar() {
-        int suma = val1 + val2;
-        result.setText(suma);
-    }
-
     private void restar() {
-        int resta = val1 - val2;
-        result.setText(resta);
+        try {
+            int resta = val1 - val2;
+            result.setText("R: " + resta);
+        } catch(Exception e) {
+            Toast.makeText(this, "Eror inesperado", Toast.LENGTH_LONG ).show();
+        }
     }
 
     private void multiplicar() {
-        int mult = val1 * val2;
-        result.setText(mult);
+        try {
+            int mult = val1 * val2;
+            result.setText("R: " + mult);
+        } catch(Exception e) {
+            Toast.makeText(this, "Eror inesperado", Toast.LENGTH_LONG ).show();
+        }
     }
 
     private void dividir() {
-        int div = val1 / val2;
-        result.setText(div);
+        try {
+            if(val2 > 0){
+                int div = val1 / val2;
+                result.setText("R: " + div);
+            } else{
+                Toast.makeText(this, "No puedes dividir por menos de 0", Toast.LENGTH_LONG ).show();
+            }
+        } catch(Exception e) {
+            Toast.makeText(this, "Eror inesperado", Toast.LENGTH_LONG ).show();
+        }
     }
+
 }
